@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css') }}"/>
+    <!-- Displays a form for the user to enter information into for deletion. -->
+    <title>Delete Page</title>
+</head>
+<body>
+     <div class='display_wrapper'>
+         <h3>
+            Delete Item
+        </h3>
+        <p>Are you sure you want to delete this item?</p>
+        <form action="/{{item_name}}/item_deleted" method="post">
+            <input type="hidden" name="item_name" value='{{item_name}}'>
+            <input type='submit' value="Delete" name='deletebtn'>
+        </form>
+    </div>
+</body>
+</html>

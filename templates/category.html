@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css') }}"/>
+    <title>Catalog</title>
+</head>
+<body>
+    <div class='header_wrapper'>
+        <header>
+            <div class='header_text_wrapper'>
+                <h1>
+                    Catalog App
+                </h1>
+            </div>
+            <!-- This div will check if the user is logged in and provide a login link or logout depending. -->
+            <div class = 'login_header_wrapper'>
+                    {% if session.get('username') %}
+                        <h3>{{session.get('username')}} you are logged in.</h3>
+                        <a href="/gdisconnect">Sign Out</a>
+                    {% else %}
+                        <a href="/login">Login Here</a>
+                    {% endif %}
+                </div>
+        </header>
+    </div>
+    <div class='main_wrapper'>
+        <div class='category_wrapper'>
+            <h3>
+                Categories
+            </h3>
+            <nav>
+                <!-- This ul displays all available categories. -->
+                <ul>
+                    {% for item in data %}
+                        <li><a href='/{{item.categoryName}}/items'>{{item.categoryName}}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+        </div>
+        <!-- Checks if the user is logged in, if they are they can add an item. -->
+        <div class='display_wrapper'>
+            {% if session.get('username') %}
+            <a href='/{{cat_name}}/additem'>Add Item</a>
+            {% endif %}
+            <h3>
+                Items in this category
+            </h3>
+            <!-- Gets and links all the items in the category selected. -->
+            <ul>
+                {% for item in cat_items %}
+                    <li><a href='/{{item.title}}'>{{item.title}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

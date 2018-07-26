@@ -1,0 +1,48 @@
+header {
+    display: flex;
+    background-color: navy;
+    color: white;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: gray;
+}
+
+.login_header_wrapper{
+    margin-right: 15%;
+    align-items: center;
+}
+
+.header_text_wrapper{
+    margin-left: 15%;
+}
+
+.main_wrapper{
+    display: flex;
+    background-color: white;
+    margin: 2% 15%;
+    justify-content: left;
+
+}
+
+.display_wrapper{
+    align-content: center;
+    justify-content: left;
+}
+
+.category_wrapper{
+    margin-left: 10%;
+    border-right: 5px solid grey;
+    padding-right: 20px;
+    margin-right: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css') }}"/>
+    <!-- Displays a form for the user to enter information into. -->
+    <title>Document</title>
+</head>
+<body>
+        </div>
+        <div class='main_wrapper'>
+            <div class='category_wrapper'>
+                <h3>
+                   Add Item
+                </h3>
+            <div class='display_wrapper'>
+            <form action="/add_final" method="POST">
+                <input type="hidden" name="category_name" value={{cat_name}}>
+                <input type="hidden" name="user_id" value={{user_id}}>
+                Title: <br>
+                <input type="text" name="item_name">
+                <br>
+                Description: <br>
+                <input type="text" name="item_desc">
+                <br>
+                Category: <br>
+                {{cat_name}}
+                <br>
+                <input type='submit' value="Submit">
+            </form>
+        </div>
+</body>
+</html>
